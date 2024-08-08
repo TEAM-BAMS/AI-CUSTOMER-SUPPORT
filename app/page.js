@@ -1,9 +1,9 @@
-import Login from "./login/page";
-import './styles/global.css';
+import   WelcomeScreen from "./welcomescreen"
+import './styles/global.css'; 
 export default function Home() {
   return (
     <>
-     <Login />
+     <WelcomeScreen />
     </>
   );
 }

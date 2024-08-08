@@ -19,11 +19,22 @@ module.exports = {
                         },
                         "firebrick": "#be2f2f",
                         "secondary-colour": "#433d8b",
+                        "color": "#433d8b",
+                        "white": "#fff",
+                        "midnightblue": "#2e236c",
+                        "linear": "#ec83bb",
+                        "aliceblue": "#e8eff7",
+                        "darkgray": "#9d9ea6",
+                        "gray-footprint": "#9a9b9f",
                       "text-color": "#fff"
+
                 },
                 "spacing": {},
                 "fontFamily": {
-                      "inter": "Inter"
+                      "inter": "Inter",
+                      "m3-title-medium": "'Product Sans'",
+                      "poppins": "Poppins",
+                      "montserrat": "Montserrat"
                 }
           },
           "fontSize": {
