@@ -116,7 +116,17 @@ const SignUpPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="static" color="primary" elevation={"0"}>
+      <AppBar
+        position="static"
+        sx={{
+          background:
+            "linear-gradient(45deg, rgba(255, 255, 255, 0.6), rgba(50, 50, 50, 0.8))",
+          backdropFilter: "blur(14px)",
+          transition: "all 0.8s ease-in-out",
+          boxShadow: "0 8px 32px 0 rgba(31,38,135,0.37)",
+        }}
+        elevation={"0"}
+      >
         <Toolbar>
           <BotIcon />
 
@@ -135,21 +145,37 @@ const SignUpPage = () => {
             <a
               href="/"
               onClick={ToHome}
-              style={{ color: "white", textDecoration: "none" }}
+              style={{ color: "#000", textDecoration: "none" }}
             >
-              GTCO shares AI Assistant
+              GTCO Shares Support AI
             </a>
           </Typography>
         </Toolbar>
       </AppBar>
-      <Container maxWidth="xs">
+      <Container
+        maxWidth="lg"
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          justifyContent: "flex-end",
+          alignItems: "center",
+          minHeight: "80vh",
+        }}
+      >
         <Box
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="center"
-          minHeight="80vh"
-          textAlign="center"
+          sx={{
+            width: { xs: "100%", md: "40%" },
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "rgba(255, 255, 255, 0.2)",
+            backdropFilter: "blur(14px)",
+            marginTop: "20px",
+            borderRadius: "1rem",
+            boxShadow: "0 8px 32px 0 rgba(31,38,135,0.37)",
+            padding: "20px",
+          }}
         >
           <Typography variant="h4" component="h1" gutterBottom>
             Sign Up
@@ -234,7 +260,7 @@ const SignUpPage = () => {
             </Button>
             <Typography
               variant="body1"
-              sx={{ color: theme.palette.text.primary }}
+              sx={{ color: theme.palette.text.primary, textAlign: "center" }}
             >
               or
             </Typography>

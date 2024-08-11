@@ -125,12 +125,18 @@ const ChatPage = () => {
       <AppBar
         position="static"
         elevation={0}
-        sx={{ backgroundColor: "#121212", color: "white" }}
+        sx={{
+          background:
+            "linear-gradient(45deg, rgba(255, 255, 255, 0.6), rgba(50, 50, 50, 0.8))",
+          backdropFilter: "blur(14px)",
+          transition: "all 0.8s ease-in-out",
+          boxShadow: "0 8px 32px 0 rgba(31,38,135,0.37)",
+        }}
       >
         <Toolbar>
           <BotIcon />
           <Typography variant="h6" sx={{ flexGrow: 1, marginLeft: 1 }}>
-            GTCO shares AI Assistant
+            GTCO Shares Support AI
           </Typography>
 
           <IconButton onClick={(e) => setAnchorEl(e.currentTarget)}>
@@ -142,8 +148,9 @@ const ChatPage = () => {
             onClose={() => setAnchorEl(null)}
             sx={{
               "& .MuiPaper-root": {
-                backgroundColor: "#1e1e1e",
-                color: "white",
+                backgroundColor: "#fff",
+                boxShadow: "0 8px 32px 0 rgba(31,38,135,0.37)",
+                color: "#1e1e1e",
               },
             }}
           >
@@ -174,11 +181,15 @@ const ChatPage = () => {
               sx={{
                 maxWidth: "80%",
                 borderRadius: "20px",
+                backdropFilter: "blur(14px)",
+                boxShadow: "0 8px 32px 0 rgba(31,38,135,0.37)",
                 padding: 2,
                 marginBottom: 1,
-                color: "white",
+                color: "#333",
                 backgroundColor:
-                  message.role === "assistant" ? "#333" : "#1e1e1e",
+                  message.role === "assistant"
+                    ? "rgba(255, 255, 255, 0.55)"
+                    : "rgba(255, 255, 255, 0.3)",
                 alignSelf:
                   message.role === "assistant" ? "flex-start" : "flex-end",
                 overflowWrap: "break-word",
@@ -194,7 +205,7 @@ const ChatPage = () => {
       <Box
         sx={{
           padding: 2,
-          backgroundColor: "#121212",
+          backgroundColor: "rgba(255, 255, 255, 0.3)",
           position: "sticky",
           bottom: 0,
           left: 0,
@@ -204,7 +215,7 @@ const ChatPage = () => {
       >
         <TextField
           variant="outlined"
-          placeholder="Ask me anything..."
+          placeholder="Ask me anything about the GTCO shares..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyPress={handleKeyPress}
@@ -214,13 +225,14 @@ const ChatPage = () => {
           InputProps={{
             endAdornment: (
               <IconButton onClick={sendMessage} disabled={isLoading}>
-                <Send style={{ color: "#fff" }} />
+                <Send style={{ color: "#000" }} />
               </IconButton>
             ),
           }}
           sx={{
-            backgroundColor: "#333",
-            color: "white",
+            backgroundColor: "rgba(255, 255, 255, 0.3)",
+            boxShadow: "0 8px 32px 0 rgba(31,38,135,0.37)",
+            color: "#000",
             borderRadius: "25px",
             "& .MuiOutlinedInput-root": {
               borderRadius: "25px",
@@ -235,13 +247,13 @@ const ChatPage = () => {
               },
             },
             "& .MuiInputBase-input": {
-              color: "white",
+              color: "#000",
             },
             "& .MuiInputLabel-root": {
-              color: "#aaa",
+              color: "#000",
             },
             "& .MuiInputLabel-root.Mui-focused": {
-              color: "white",
+              color: "#000",
             },
           }}
           ref={inputRef}

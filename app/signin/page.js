@@ -11,7 +11,6 @@ import {
   AppBar,
   Toolbar,
   CssBaseline,
-  Divider,
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { auth, provider } from "../../firebase";
@@ -106,7 +105,17 @@ const SignInPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="static" color="primary" elevation={0}>
+      <AppBar
+        position="static"
+        sx={{
+          background:
+            "linear-gradient(45deg, rgba(255, 255, 255, 0.6), rgba(50, 50, 50, 0.8))",
+          backdropFilter: "blur(14px)",
+          transition: "all 0.8s ease-in-out",
+          boxShadow: "0 8px 32px 0 rgba(31,38,135,0.37)",
+        }}
+        elevation={0}
+      >
         <Toolbar>
           <BotIcon />
           <Typography
@@ -117,21 +126,37 @@ const SignInPage = () => {
             <a
               href="/"
               onClick={ToHome}
-              style={{ color: "white", textDecoration: "none" }}
+              style={{ color: "#000", textDecoration: "none" }}
             >
-              GTCO shares AI Assistant
+              GTCO Shares Support AI
             </a>
           </Typography>
         </Toolbar>
       </AppBar>
-      <Container maxWidth="xs">
+      <Container
+        maxWidth="lg"
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          justifyContent: "flex-end",
+          alignItems: "center",
+          minHeight: "80vh",
+        }}
+      >
         <Box
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="center"
-          minHeight="80vh"
-          textAlign="center"
+          sx={{
+            width: { xs: "100%", md: "40%" },
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "20px",
+            marginTop: "20px",
+            borderRadius: "1rem",
+            backgroundColor: "rgba(255, 255, 255, 0.2)",
+            backdropFilter: "blur(14px)",
+            boxShadow: "0 8px 32px 0 rgba(31,38,135,0.37)",
+          }}
         >
           <Typography variant="h4" component="h1" gutterBottom>
             Sign In
@@ -216,13 +241,13 @@ const SignInPage = () => {
             </Button>
             <Typography
               variant="body1"
-              sx={{ color: theme.palette.text.primary }}
+              sx={{ color: theme.palette.text.primary, textAlign: "center" }}
             >
               or
             </Typography>
             <Button
               fullWidth
-              variant="conatined"
+              variant="contained"
               color="secondary"
               sx={{
                 mt: 2,
