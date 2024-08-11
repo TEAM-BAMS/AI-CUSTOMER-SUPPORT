@@ -185,7 +185,7 @@ const ChatPage = () => {
                 boxShadow: "0 8px 32px 0 rgba(31,38,135,0.37)",
                 padding: 2,
                 marginBottom: 1,
-                color: "#333",
+                color: "#000",
                 backgroundColor:
                   message.role === "assistant"
                     ? "rgba(255, 255, 255, 0.55)"
@@ -211,6 +211,7 @@ const ChatPage = () => {
           left: 0,
           right: 0,
           zIndex: 1,
+          color: "#000",
         }}
       >
         <TextField
