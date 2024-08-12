@@ -20,7 +20,7 @@ Customer-Centric Approach: Always prioritize clarity and simplicity in your expl
 Digital Banking Strength: Highlight GTCO's strong digital banking platform and encourage customers to explore the app for a seamless experience.
 
 Your responses should be professional, clear, and supportive, making it easy for customers to take action and successfully purchase GTCO shares.
-`; // Use your own system prompt here
+`;
 
 // POST function to handle incoming requests
 export async function POST(req) {
@@ -28,8 +28,8 @@ export async function POST(req) {
     baseURL: "https://openrouter.ai/api/v1",
     apiKey: process.env.OPENROUTER_API_KEY,
     defaultHeaders: {
-      "HTTP-Referer": "http://localhost:3000/", // Optional, for including your app on openrouter.ai rankings.
-      // "X-Title": $YOUR_SITE_NAME, // Optional. Shows in rankings on openrouter.ai.
+      "HTTP-Referer": "https://ai-customer-support-ten.vercel.app/", // Optional, for including your app on openrouter.ai rankings.
+      "X-Title": `GTCO Shares Support AI`, // Optional. Shows in rankings on openrouter.ai.
     },
   }); // Create a new instance of the OpenAI client
   const data = await req.json(); // Parse the JSON body of the incoming request
